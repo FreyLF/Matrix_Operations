@@ -1,0 +1,100 @@
+
+	MathS::Vec3 v(1, 2, 3);
+	
+	MathS::Mat3 m;
+	m.values[0][0] = 1; m.values[0][1] = 2; m.values[0][2] = 3;
+	m.values[1][0] = 4; m.values[1][1] = 5; m.values[1][2] = 6;
+	m.values[2][0] = 7; m.values[2][1] = 8; m.values[2][2] = 9;
+
+	MathS::Vec3 v2 = m * v;
+			std::cout << v2.x << "   ";
+			std::cout << v2.y << "   ";
+			std::cout << v2.z << "   ";
+			std::cout << '\n';
+			std::cout << '\n';
+
+
+	MathS::Mat4 m2;
+	m2.values[0][0] = 1; m2.values[0][1] = 2; m2.values[0][2] = 3; m2.values[0][3] = 4;
+	m2.values[1][0] = 5; m2.values[1][1] = 6; m2.values[1][2] = 7; m2.values[1][3] = 8;
+	m2.values[2][0] = 9; m2.values[2][1] = 10;m2.values[2][2] = 11;m2.values[2][3] = 12;
+	m2.values[3][0] = 13;m2.values[3][1] = 14;m2.values[3][2] = 15;m2.values[3][3] = 16;
+
+	MathS::Vec4 v3(1, 2, 3, 4);
+	MathS::Vec4 v4 = m2 * v3;
+		std::cout << v4.x << "   ";			  
+		std::cout << v4.y << "   ";			  
+		std::cout << v4.z << "   ";
+		std::cout << v4.w << "   ";
+		std::cout << '\n';
+		std::cout << '\n';
+
+	MathS::Mat3 m3;
+	m3.values[0][0] = 1; m3.values[0][1] = 2; m3.values[0][2] = 3;
+	m3.values[1][0] = 4; m3.values[1][1] = 5; m3.values[1][2] = 6;
+	m3.values[2][0] = 7; m3.values[2][1] = 8; m3.values[2][2] = 9;
+
+	MathS::Mat3 m4;
+	m4.values[0][0] = 1; m4.values[0][1] = 2; m4.values[0][2] = 3;
+	m4.values[1][0] = 4; m4.values[1][1] = 5; m4.values[1][2] = 6;
+	m4.values[2][0] = 7; m4.values[2][1] = 8; m4.values[2][2] = 9;
+
+	MathS::Mat3 m5 = m3 * m4;
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			std::cout << m5.values[i][j] << "   ";
+		}
+		std::cout << '\n';
+	}
+	std::cout << '\n';
+	std::cout << '\n';
+
+
+	MathS::Mat4 m6;
+	m6.values[0][0] = 1; m6.values[0][1] = 2; m6.values[0][2] = 3; m6.values[0][3] = 4;
+	m6.values[1][0] = 5; m6.values[1][1] = 6; m6.values[1][2] = 7; m6.values[1][3] = 8;
+	m6.values[2][0] = 9; m6.values[2][1] = 10;m6.values[2][2] = 11;m6.values[2][3] = 12;
+	m6.values[3][0] = 19;m6.values[3][1] = 18;m6.values[3][2] = 17;m6.values[3][3] = 16;
+
+	MathS::Mat4 m7;
+	m7.values[0][0] = 17; m7.values[0][1] = 18; m7.values[0][2] = 19; m7.values[0][3] = 20;
+	m7.values[1][0] = 21; m7.values[1][1] = 22; m7.values[1][2] = 23; m7.values[1][3] = 24;
+	m7.values[2][0] = 25; m7.values[2][1] = 26; m7.values[2][2] = 27; m7.values[2][3] = 28;
+	m7.values[3][0] = 29; m7.values[3][1] = 30; m7.values[3][2] = 31; m7.values[3][3] = 32;
+
+	MathS::Mat4 m8 = m6 * m7;
+
+
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			std::cout << m8.values[i][j] << "   ";
+		}
+		std::cout << '\n';
+	}
+	std::cout << '\n';
+	std::cout << '\n';
+
+	
+
+		MathS::Mat4 m9;
+		m9.values[0][0] = 1; m9.values[0][1] = 0; m9.values[0][2] = 0; m9.values[0][3] = 0;
+		m9.values[1][0] = 0; m9.values[1][1] = .309f; m9.values[1][2] = .951f; m9.values[1][3] = 0;
+		m9.values[2][0] = 0; m9.values[2][1] = -.951f; m9.values[2][2] = .309f; m9.values[2][3] = 0;
+		m9.values[3][0] = 7; m9.values[3][1] = -2.282f; m9.values[3][2] = 9.153f; m9.values[3][3] = 1;
+
+
+		MathS::Mat4 m10 =  m9.Inverse();
+
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				std::cout << m10.values[i][j] << "   ";
+			}
+			std::cout << '\n';
+		}
